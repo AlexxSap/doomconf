@@ -35,18 +35,6 @@
 ;; comments
 (map! "C-/" #'comment-line)
 
-;; dashboard settings
-(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
-(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
-(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-loaded)
-(setq fancy-splash-image (concat doom-user-dir "lenin3.svg"))
-(add-hook! '+doom-dashboard-functions :append
-  (insert "\n" (+doom-dashboard--center +doom-dashboard--width
-                                        "                        И новое солнце встаёт величаво,
-                        Неся человечеству новую жизнь,
-                        Солнце свободы, солнце славы,
-                        Имя которому - коммунизм!")))
-
 ;; org settings
 ;; source code pretty
 (setq org-src-fontify-natively t)
@@ -232,7 +220,7 @@
 
 ;; haskell settings
 ;; lsp for haskell
-;; (require 'lsp-haskell)
+(require 'lsp-haskell)
 ;; hooks for doc and indentation
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
@@ -243,3 +231,4 @@
 
 ;; Для Haskell включите проверку hlint
 (add-hook 'haskell-mode-hook #'flycheck-mode)
+
